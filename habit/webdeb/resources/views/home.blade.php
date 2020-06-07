@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    <a href="/create">Add Habit</a>
                 </div>
             </div>
         </div>

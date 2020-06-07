@@ -8,6 +8,9 @@ use DB;
 
 class HabitController extends Controller
 {
+    public function create(Request $request){
+        return view('create');
+    }
     public function store(Request $request)
     {
         $this->validate($request, [
