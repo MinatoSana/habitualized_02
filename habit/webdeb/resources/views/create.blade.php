@@ -14,7 +14,7 @@
                     @endif
 
                     <h2>Create Post</h2>
-                    <form action="HabitController@store" method="POST">
+                    <form action="/create" method="POST">
                         <label for="description">Description:</label>
                         <input type="text" placeholder="Description" name="description" class="form-control">
                         <label for="reason">Reason:</label>
