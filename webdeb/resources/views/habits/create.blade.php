@@ -14,12 +14,12 @@
                     @endif
 
                     <h2>Create Post</h2>
-                    <form action="/create" method="POST">
+                    <form action="/habits/create" method="POST">
                         @csrf
                         <label for="description">Description:</label>
                         <input type="text" placeholder="Description" name="description" class="form-control">
                         <label for="reason">Reason:</label>
-                        <textarea type="text" placeholder="Type Reason Here" name="reason" class="form-control"></textarea>
+                        <input type="text" placeholder="Type Reason Here" name="reason" class="form-control">
                         <button type="submit">Add</button>
                     </form>
                 </div>
