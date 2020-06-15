@@ -38,7 +38,7 @@
                 </tr>
                 @empty
                     <tr>
-                        <td>No days Rated</td>
+                        <td>Start Tracking Now</td>
                     </tr>
                 @endforelse
             </table>
