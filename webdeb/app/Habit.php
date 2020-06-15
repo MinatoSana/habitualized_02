@@ -12,7 +12,9 @@ class Habit extends Model
     public $primaryKey = 'id';
     // Timestamps
     public $timestamps = true;
-
+    protected $fillable = [
+        'description', 'reason', 'time_lapse'
+    ];
     public function user(){
         return $this->belongsTo('App\User');
     }

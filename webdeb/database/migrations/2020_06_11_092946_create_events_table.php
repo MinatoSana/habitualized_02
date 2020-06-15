@@ -15,7 +15,9 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->string('emote');
+            $table->integer('habit_id')->unsigned();
         });
     }
 
@@ -25,7 +27,11 @@ class CreateEventsTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+        // Schema::table('events', function (Blueprint $table) {
+        //     $table->dropForeign('habit_id');
+        //     $table->dropIndex('habit_id');
+        // });
         Schema::dropIfExists('events');
     }
 }

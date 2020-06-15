@@ -18,7 +18,9 @@ class CreateHabitsTable extends Migration
             $table->timestamps();
             $table->string('description');
             $table->mediumText('reason');
-            $table->integer('user_id');
+            $table->integer('time_lapse');
+            $table->integer('user_id')->unsigned()->nullable();
+            // $table->index('user_id');
         });
     }
 
@@ -30,5 +32,10 @@ class CreateHabitsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('habits');
+        // Schema::table('habits', function (Blueprint $table) {
+        //     $table->dropForeign('user_id');
+        //     $table->dropIndex('user_id');
+        // });
+
     }
 }

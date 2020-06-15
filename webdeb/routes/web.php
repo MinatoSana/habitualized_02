@@ -20,9 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/habit/{$id}', 'HabitController@show')->name('habits.show');
 Route::post('/habits/create', 'HabitController@store');
 Route::put('/habits/{$id}', 'HabitController@update');
+Route::post('/habits/{$id}/event/store', 'EventsController@store');
 Route::resource('habits','HabitController');
+Route::resource('events','EventsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

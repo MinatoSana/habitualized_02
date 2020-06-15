@@ -18,15 +18,18 @@
                         <tr>
                             <th>Habits</th>
                             <th></th>
+                            <th>Time Lapse</th>
                             <th></th>
                         </tr>
                     
                     @foreach($habits as $habit)
                     <tr>
-                        <td><a href="/habits/{{$habit->id}}">{{$habit->description}}</a></td>
-                        <td><a href="/habits/{{$habit->id}}/edit" class="btn btn-warning">Edit</a></td>
+                        <td>{{$habit->description}}</td>
+                        <td><a href="/habits/{{$habit->id}}" class="btn btn-warning">Show Details</a></td>
                         <td>
-                        <form action="/habits/{{$habit->id}}" method="POST">
+                            {{$habit->time_lapse}}
+                        </td>
+                        <td><form action="/habits/{{$habit->id}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger">Delete</button>
@@ -38,9 +41,7 @@
                 @else
                     <p>You have no habits</p>
                 @endif
-                    You are logged in!
-                    <a href="/habits/create">long cut</a>
-                    <a href="#" data-toggle="modal" data-target="#ModalLoginForm">Add Habit</a>
+                    <a href="#" data-toggle="modal" data-target="#ModalLoginForm" class="btn btn-primary">Add Habit</a>
                     <div id="ModalLoginForm" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
