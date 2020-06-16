@@ -13,6 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('remove'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('remove') }}
+                        </div>
+                    @endif
                     @if(count($habits) > 0)
                     <table class="table table-striped">
                         <tr>

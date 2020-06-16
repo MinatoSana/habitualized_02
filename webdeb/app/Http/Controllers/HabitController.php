@@ -61,7 +61,7 @@ class HabitController extends Controller
             }
         }
         $habit->delete();
-        return redirect('/home')->with('status', 'Habit Removed');
+        return redirect('/home')->with('remove', 'Habit Removed');
 
     }
 }
