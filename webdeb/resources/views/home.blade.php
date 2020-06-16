@@ -51,7 +51,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title text-xs-center">Log in like a Boss</h4>
+                                    <h4 class="modal-title text-xs-center">Add Habit</h4>
                                 </div>
                                 <div class="modal-body">
                                     <form role="form" method="POST" action="/habits/create">
