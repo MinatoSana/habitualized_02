@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Habits</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,7 +16,7 @@
                     @if(count($habits) > 0)
                     <table class="table table-striped">
                         <tr>
-                            <th>Habits</th>
+                            <th>Description</th>
                             <th></th>
                             <th>Time Lapse</th>
                             <th></th>
