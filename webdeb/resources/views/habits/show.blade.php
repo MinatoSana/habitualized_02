@@ -3,10 +3,10 @@
 @section('inline')
 <style>
     input[type=radio] { 
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
     input[type=radio] + i {
     cursor: pointer;
@@ -44,20 +44,6 @@
             <h3>Number of Days: {{$events->count()}}</h3>
                 <div class="card-deck">
                 @forelse($events as $key => $event)
-                {{-- <tr>
-                <td><a>{{$event->date}} Day {{++$key}}</a></td>
-                    <td>
-                        @if( $event->emote == 'smile')
-                            <i class="fas fa-smile fa-3x"></i>
-                        @elseif( $event->emote == 'meh')
-                            <i class="fas fa-meh fa-3x"></i>
-                        @else 
-                            <i class="fas fa-frown fa-3x"></i>
-                        @endif
-                    </td>
-                    <td>
-                    </td>
-                </tr> --}}
                 <div class="col-auto mb-3">
                 <div class="card" style="width: 10rem;">
                     <div class="card-body">
