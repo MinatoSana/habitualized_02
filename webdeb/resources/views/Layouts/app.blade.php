@@ -22,23 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>
-        input[type=radio] { 
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-        }
-        /* IMAGE STYLES */
-        input[type=radio] + i {
-        cursor: pointer;
-        }
-
-        /* CHECKED STYLES */
-        input[type=radio]:checked + i {
-        outline: 2px solid rgb(27, 27, 27);
-        }
-    </style>
+    @yield('inline')
 </head>
 <body>
     <div id="app">
@@ -72,7 +56,7 @@
                         @else
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->firstname }}
                             </a>
                         </li>
                         <li class="nav-item">
@@ -91,7 +75,11 @@
                 </div>
             </div>
         </nav>
-
+        @if(session('warning'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('warning') }}
+                </div>
+            @endif
         <main class="py-4">
             @if(count($errors) > 0)
             @foreach($errors->all() as $error)
@@ -100,6 +88,7 @@
             </div>
             @endforeach
             @endif
+            
             @yield('content')
         </main>
     </div>

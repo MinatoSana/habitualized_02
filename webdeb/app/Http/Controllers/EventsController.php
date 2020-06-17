@@ -7,6 +7,7 @@ use App\Event;
 use App\Habit;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
+use Carbon\Carbon;
 
 class EventsController extends Controller
 {
@@ -49,13 +50,21 @@ class EventsController extends Controller
         $event->date = $request->input('date');
         $event->emote = $request->input('emote');
         $event->habit_id = $request->input('habit_id');
-        $stats= Event::where('habit_id', $event->habit_id)->where('date', $event->date)->get();
-        if($stats->isEmpty()){
-            $event->save();   
+        if($event->date === Carbon::now()->format('Y-m-d')){
+            $stats= Event::where('habit_id', $event->habit_id)->where('date', $event->date)->get();
+            if($stats->isEmpty()){
+                $msg = "Date recorded.";
+                $event->save();   
+            }else{
+                $msg = "Date has been rated.";
+                $event->delete();
+            }
         }else{
+            $msg = "You can only rate today.";
             $event->delete();
         }
-        return back();
+        
+        return back()->with('warning', $msg);
     }
 
 
