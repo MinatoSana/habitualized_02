@@ -23,6 +23,7 @@
     .ow{
         color:#fa6e0a;
     }
+    
 </style>
 @endsection
 @section('content')
@@ -48,7 +49,8 @@
                 <div class="card" style="width: 10rem;">
                     <div class="card-body">
                         <center>
-                        <p>Day {{++$key}}</p>
+                        <h2>Day {{++$key}}</h2>
+                        <p>{{$event->date}}</p>
                         @if( $event->emote == 'smile')
                             <i class="fas fa-smile fa-3x chi"></i>
                         @elseif( $event->emote == 'meh')
@@ -61,7 +63,7 @@
                 </div>
             </div>
                 @empty
-                    <div class="container" style="padding: 20%; width:90%; height:20%; border: 1px solid black; border-radius:1rem;">
+                    <div class="container" style="padding: 20%; width:90%; height:20%; border: 1px broken black; border-radius:1rem;">
                         <h1>Start Tracking Now</h1>
                     </div>
                 @endforelse
@@ -82,6 +84,7 @@
                                 <input type="hidden" name="habit_id" value="{{ $habit->id }}">
                                 <label for="date" class="control-label">Date:</label><input name="date" type="date" value="{{date('Y-m-d')}}"><br>
                                     <label class="control-label">Rating:</label><br>
+                                    
                                     <label>
                                         <input type="radio" name="emote" value="smile">
                                         <i class="fas fa-smile fa-7x chi"></i>
@@ -95,6 +98,7 @@
                                         <i class="fas fa-frown fa-7x red"></i>
                                     </label>
                                 </div>
+                            
                                 <div class="form-group">
                                     <div>
                                         <button type="submit" class="btn btn-info btn-block">Rate</button>

@@ -34,7 +34,7 @@ class HomeController extends Controller
         
         foreach($hats as $hat){
             $habit= Habit::find($hat->id);
-            $event = Event::where('habit_id', $hat->id)->where('emote','smile')->orderBy('date')->first();
+            $event = Event::where('habit_id', $hat->id)->where('emote','smile')->orderBy('date','desc')->first();
             if($event!=NULL){
                 error_log($event->date);
                 $last= Carbon::now();
