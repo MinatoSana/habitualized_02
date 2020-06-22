@@ -9,10 +9,10 @@
         height: 0;
     }
     input[type=radio] + i {
-    cursor: pointer;
+        cursor: pointer;
     }
     input[type=radio]:checked + i {
-    outline: 2px solid rgb(27, 27, 27);
+        outline: 2px solid rgb(27, 27, 27);
     }
     .chi{
         color:#71ff05;
