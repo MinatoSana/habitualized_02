@@ -12,7 +12,7 @@
         cursor: pointer;
     }
     input[type=radio]:checked + i {
-        outline: 2px solid rgb(27, 27, 27);
+        outline: 2px solid rgb(255, 255, 255);
     }
     .chi{
         color:#71ff05;
@@ -28,14 +28,14 @@
 @endsection
 @section('content')
 
-<div class="container">
+<div class="container" >
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card bg-dark" style="color: rgb(210, 212, 61)" >
                 <div class="card-body">
-                    <a href="/home"><-Go Back</a>
+                    <a href="/home" class="btn btn-warning" style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-arrow-left" aria-hidden="true"></i> Go Back</a>
                 <h1>{{$habit->description}}</h1>
-                <div>
+                <div style="font-family: 'Montserrat', sans-serif;">
                     {!!$habit->reason!!}
                 </div>
                 <hr>
@@ -46,7 +46,7 @@
                 <div class="card-deck">
                 @forelse($events as $key => $event)
                 <div class="col-auto mb-3">
-                <div class="card" style="width: 10rem;">
+                <div class="card text-white bg-secondary" style="width: 10rem;">
                     <div class="card-body">
                         <center>
                         <h2>Day {{++$key}}</h2>
@@ -70,12 +70,12 @@
             </div>
             
                 </div>
-            <a href="#" data-toggle="modal" data-target="#ModalLoginForm" class="btn btn-primary">Rate My Day</a>
+            <a href="#" data-toggle="modal" data-target="#ModalLoginForm" class="btn btn-warning" style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-star-o" aria-hidden="true"></i> Rate My Day</a>
             <div id="ModalLoginForm" class="modal fade">
                 <div class="modal-dialog">
-                    <div class="modal-content">
+                    <div class="modal-content" style="background-color: #292b2c;">
                         <div class="modal-header">
-                            <h4 class="modal-title text-xs-center">Rate Your Day</h4>
+                            <h4 class="modal-title text-xs-center" >Rate Your Day</h4>
                         </div>
                         <div class="modal-body">
                             <form role="form" method="POST" action="/habits/{$id}/event/store">

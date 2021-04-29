@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="background-color: rgb(207, 196, 196);">
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                     @endif
 
                     <h2>Create Post</h2>
-                    <form action="/habits/create" method="POST">
+                    <form action="/habits/create" method="POST" style="">
                         @csrf
                         <label for="description">Description:</label>
                         <input type="text" placeholder="Description" name="description" class="form-control">

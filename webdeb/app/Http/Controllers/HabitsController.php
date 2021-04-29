@@ -43,7 +43,7 @@ class HabitsController extends Controller
         ]);
         $habit = new Habit;
         $habit->description = $request->input('description');
-        $habit->reason = $request->input('reason');
+        $habit->reason = trim($request->input('reason'));
         $habit->user_id = auth()->user()->id;
         $habit->save();
         return redirect('/home')->with('status', 'Habit Added');
